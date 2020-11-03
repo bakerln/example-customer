@@ -4,9 +4,64 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
+    <!--构建配置-->
+    <parent>
+        <artifactId>ln-common</artifactId>
+        <groupId>cn.bread</groupId>
+        <version>1.0.0-SNAPSHOT</version>
+    </parent>
+
     <groupId>cn.com.example</groupId>
     <artifactId>example-customer</artifactId>
     <version>1.0.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
 
+    <modules>
+        <module>customer-api-web</module>
+        <module>customer-api-service</module>
+        <module>customer-api-rpc</module>
+        <module>customer-api-pojo</module>
+    </modules>
 
+    <properties>
+        <!--框架版本-->
+        <common-framework.version>1.0.0-SNAPSHOT</common-framework.version>
+        <!--本域版本-->
+        <customer-api.version>1.0.0-SNAPSHOT</customer-api.version>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <!-- 定义框架版本 -->
+            <dependency>
+                <groupId>cn.bread.framework</groupId>
+                <artifactId>common-framework</artifactId>
+                <version>${common-framework.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <!-- 定义本域版本 （web可以不定义，因为不被引用）-->
+            <dependency>
+                <groupId>cn.com.example</groupId>
+                <artifactId>customer-api-web</artifactId>
+                <version>${customer-api.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>cn.com.example</groupId>
+                <artifactId>customer-api-rpc</artifactId>
+                <version>${customer-api.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>cn.com.example</groupId>
+                <artifactId>customer-api-service</artifactId>
+                <version>${customer-api.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>cn.com.example</groupId>
+                <artifactId>customer-api-pojo</artifactId>
+                <version>${customer-api.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 </project>
