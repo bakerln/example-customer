@@ -11,5 +11,22 @@
 
     <artifactId>customer-api-service</artifactId>
 
+    <dependencies>
+        <!--SERVICE框架依赖-->
+        <dependency>
+            <groupId>cn.bread.framework</groupId>
+            <artifactId>common-framework-service</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>cn.bread.framework</groupId>
+            <artifactId>common-framework-util</artifactId>
+        </dependency>
+
+        <!--本域依赖-->
+        <dependency>
+            <groupId>cn.com.example</groupId>
+            <artifactId>customer-api-rpc</artifactId>
+        </dependency>
+    </dependencies>
 
 </project>

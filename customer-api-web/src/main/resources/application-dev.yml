@@ -8,6 +8,7 @@ eureka:
     service-url:
       # EurekaServer地址
       defaultZone: http://localhost:8000/eureka/
+    #健康检测
     healthcheck:
       enabled: true
     register-with-eureka: true
