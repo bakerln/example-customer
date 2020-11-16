@@ -7,6 +7,7 @@ import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 /**
  * <p>Description:  吃东西操作</p>
@@ -28,5 +29,5 @@ public interface EatExampleController {
             @ApiResponse(code = 500, message = "005XX 服务器相关错误",response = ResultWrapper.class)}
     )
     @PostMapping("/food")
-    public ResultWrapper eatFood(String foodName);
+    ResultWrapper eatFood(String foodName);
 }

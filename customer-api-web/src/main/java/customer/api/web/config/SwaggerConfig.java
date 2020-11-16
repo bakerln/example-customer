@@ -38,9 +38,8 @@ public class SwaggerConfig {
                 //错误路径不监控
                 .paths(
                         Predicates.and(ant("/**"),
-                        Predicates.not(ant("/error")),
-                        Predicates.not(ant("/management/**")),
-                        Predicates.not(ant("/management*"))))
+                        Predicates.not(ant("/error"))))
+//                        Predicates.not(ant("/actuator/**"))))
                 .build();
     }
 
