@@ -1,11 +1,31 @@
 server:
   port: 9081
+
 spring:
   application:
-    name:  examples-customer
+    name:  ${project.artifactId}
+    description: 微服务消费用例
+#  primaryDataSource: spring.datasource.main
+  datasource:
+#    url: jdbc:mysql://rm-2zen4fcwysho855vp.mysql.rds.aliyuncs.com:3306/api?characterEncoding=UTF-8&useSSL=false
+#    password: 1q2w3e4R
+#    username: base_user
+    druid:
+      url: jdbc:mysql://rm-2zen4fcwysho855vp.mysql.rds.aliyuncs.com:3306/api?characterEncoding=UTF-8&useSSL=false
+      password: 1q2w3e4R
+      username: base_user
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      initial-size: 2
+      max-active: 10
+#  redis:
+#    host: 127.0.0.1
+#    port: 6379
+#    database: 0
+#    timeout: 0
+
 eureka:
    instance:
-#      ip-address: 127.0.0.1
+      ip-address: 127.0.0.1
       prefer-ip-address: true
       #Eureka客户端向服务端发送心跳的时间间隔，单位为秒（客户端告诉服务端自己会按照该规则）_开发配置
       lease-renewal-interval-in-seconds: 5
@@ -22,3 +42,29 @@ eureka:
      # 是否启用Eureka
      enabled: true
      registry-fetch-interval-seconds: 10
+
+#actuator health check
+management:
+  health:
+    redis:
+      enabled: false
+    db:
+      enabled: true
+  endpoint:
+    health:
+      show-details: always
+      enabled: true
+    httptrace:
+      enabled: true
+  server:
+    port: 8762
+    status : 1
+
+#actuator info
+info:
+  app:
+    name:  ${project.artifactId}
+    description: ${spring.application.description}
+    version: ${project.version}
+    java: ${java.version}
+
