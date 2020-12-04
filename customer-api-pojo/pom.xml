@@ -11,5 +11,16 @@
 
     <artifactId>customer-api-pojo</artifactId>
 
+    <dependencies>
+        <!--POJO框架依赖-->
+        <dependency>
+            <groupId>cn.bread.framework</groupId>
+            <artifactId>common-framework-pojo</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>cn.bread.framework</groupId>
+            <artifactId>common-framework-util</artifactId>
+        </dependency>
+    </dependencies>
 
 </project>

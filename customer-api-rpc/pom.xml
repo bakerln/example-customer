@@ -11,5 +11,17 @@
 
     <artifactId>customer-api-rpc</artifactId>
 
+    <dependencies>
+        <!--RPC框架依赖-->
+        <dependency>
+            <groupId>cn.bread.framework</groupId>
+            <artifactId>common-framework-rpc</artifactId>
+        </dependency>
 
+        <!--本域依赖-->
+        <dependency>
+            <groupId>cn.com.example</groupId>
+            <artifactId>customer-api-pojo</artifactId>
+        </dependency>
+    </dependencies>
 </project>

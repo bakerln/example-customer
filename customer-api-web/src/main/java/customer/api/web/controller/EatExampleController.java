@@ -1,13 +1,12 @@
 package customer.api.web.controller;
 
 import common.framework.util.voutil.ResultWrapper;
-import io.swagger.annotations.Api;
-import io.swagger.annotations.ApiOperation;
-import io.swagger.annotations.ApiResponse;
-import io.swagger.annotations.ApiResponses;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import customer.api.pojo.vo.Food;
+import io.swagger.annotations.*;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.Map;
+
 
 /**
  * <p>Description:  吃东西操作</p>
@@ -15,8 +14,12 @@ import org.springframework.web.bind.annotation.RestController;
  * @author linan
  * @date 2020-11-03
  */
-@Api(value = "/eat" ,tags = "消费Eat",description = "消费者所有吃东西操作")
-@RequestMapping("/eat")
+@Api(
+        value = "/foodOperation" ,
+        tags = "食物相关操作",
+        description = "消费者所有吃东西操作"
+)
+@RequestMapping("/foodOperation")
 public interface EatExampleController {
 
     @ApiOperation(
@@ -24,10 +27,105 @@ public interface EatExampleController {
             notes = "请求参数为食物名称",
             response = ResultWrapper.class
     )
+    @ApiImplicitParams({
+            @ApiImplicitParam(
+                    name = "foodName",//参数名字
+                    value = "添加吃的对象",//参数的描述
+                    required = true,//是否必须传参数，true是
+                    paramType = "body"//参数类型 body代表json
+            )
+    })
     @ApiResponses(value ={
-            @ApiResponse(code = 900,message = "009XX 业务相关错误",response = ResultWrapper.class),
-            @ApiResponse(code = 500, message = "005XX 服务器相关错误",response = ResultWrapper.class)}
-    )
+            @ApiResponse(
+                    code = 900,
+                    message = "009XX 业务相关错误",
+                    response = ResultWrapper.class),
+
+            @ApiResponse(
+                    code = 500,
+                    message = "005XX 服务器相关错误",
+                    response = ResultWrapper.class)
+    })
     @PostMapping("/food")
-    ResultWrapper eatFood(String foodName);
+    ResultWrapper createFood(@RequestBody Map foodName);
+
+
+    @ApiOperation(
+            value = "扔食物",
+            notes = "请求参数为食物ID",
+            response = ResultWrapper.class
+    )
+    @ApiImplicitParams({
+            @ApiImplicitParam(
+                    name = "id",//参数名字
+                    value = "需要扔掉的食物ID",//参数的描述
+                    required = true,//是否必须传参数，true是
+                    paramType = "path"//参数类型 body代表json
+            )
+    })
+    @ApiResponses(value ={
+            @ApiResponse(
+                    code = 900,
+                    message = "009XX 业务相关错误",
+                    response = ResultWrapper.class),
+            @ApiResponse(
+                    code = 500,
+                    message = "005XX 服务器相关错误",
+                    response = ResultWrapper.class)
+    })
+    @DeleteMapping("/food/{id}")
+    ResultWrapper throwFood(@PathVariable Integer id);
+
+    @ApiOperation(
+            value = "更新食物",
+            notes = "请求参数为食物对象",
+            response = ResultWrapper.class
+    )
+    @ApiImplicitParams({
+            @ApiImplicitParam(
+                    name = "food",//参数名字
+                    value = "需要更新的食物",//参数的描述
+                    required = true,//是否必须传参数，true是
+                    paramType = "body",//请求类型 body代表json
+                    dataType = "Food"//参数类型
+            )
+    })
+    @ApiResponses(value ={
+            @ApiResponse(
+                    code = 900,
+                    message = "009XX 业务相关错误",
+                    response = ResultWrapper.class),
+            @ApiResponse(
+                    code = 500,
+                    message = "005XX 服务器相关错误",
+                    response = ResultWrapper.class)
+    })
+    @PutMapping("/food")
+    ResultWrapper updateFood(@RequestBody Food food);
+
+    @ApiOperation(
+            value = "查看食物",
+            notes = "请求参数为食物ID",
+            response = ResultWrapper.class
+    )
+    @ApiImplicitParams({
+            @ApiImplicitParam(
+                    name = "id",//参数名字
+                    value = "需要查看的食物ID",//参数的描述
+                    required = true,//是否必须传参数，true是
+                    paramType = "path"//参数类型 body代表json
+            )
+    })
+    @ApiResponses(value ={
+            @ApiResponse(
+                    code = 900,
+                    message = "009XX 业务相关错误",
+                    response = ResultWrapper.class),
+            @ApiResponse(
+                    code = 500,
+                    message = "005XX 服务器相关错误",
+                    response = ResultWrapper.class)
+    })
+    @GetMapping("/food/{id}")
+    ResultWrapper getFood(@PathVariable Integer id);
 }
