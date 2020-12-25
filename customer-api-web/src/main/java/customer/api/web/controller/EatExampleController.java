@@ -128,4 +128,13 @@ public interface EatExampleController {
     })
     @GetMapping("/food/{id}")
     ResultWrapper getFood(@PathVariable Integer id);
+
+
+    @ApiOperation(
+            value = "查看食物列表",
+            notes = "无请求参数",
+            response = ResultWrapper.class
+    )
+    @GetMapping("/getFood")
+    ResultWrapper getFoodList();
 }

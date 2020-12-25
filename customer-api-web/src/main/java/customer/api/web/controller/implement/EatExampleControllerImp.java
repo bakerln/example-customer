@@ -1,5 +1,6 @@
 package customer.api.web.controller.implement;
 
+import common.framework.util.jsonutil.JsonUtil;
 import common.framework.util.voutil.ResultWrapper;
 import common.framework.util.voutil.ResultWrapperUtil;
 import customer.api.pojo.vo.Food;
@@ -35,5 +36,10 @@ public class EatExampleControllerImp implements EatExampleController {
     @Override
     public ResultWrapper getFood(Integer id) {
         return ResultWrapperUtil.success(id);
+    }
+
+    @Override
+    public ResultWrapper getFoodList() {
+        return ResultWrapperUtil.success("foodlist", JsonUtil.toBean("{\"name\":\"hamburger\"}",Map.class));
     }
 }
