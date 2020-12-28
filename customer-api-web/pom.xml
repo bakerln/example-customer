@@ -22,13 +22,28 @@
             <artifactId>common-framework-cloud</artifactId>
         </dependency>
 
-
         <!--本域依赖-->
         <dependency>
             <groupId>cn.com.example</groupId>
             <artifactId>customer-api-service</artifactId>
         </dependency>
-
     </dependencies>
 
+    <build>
+        <plugins>
+            <!--打部署包-->
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <version>${spring-boot.version}</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>repackage</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
 </project>

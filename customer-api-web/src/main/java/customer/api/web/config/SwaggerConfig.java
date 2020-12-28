@@ -27,8 +27,6 @@ public class SwaggerConfig {
     @Bean
     public Docket restApi() {
         return new Docket(DocumentationType.SWAGGER_2)
-                .apiInfo(apiInfo())
-                // 选择那些路径和api会生成document
                 .select()
                 // 对所有api进行监控
                 .apis(RequestHandlerSelectors.basePackage("customer.api.web.controller"))
@@ -55,7 +53,7 @@ public class SwaggerConfig {
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder()
                 .title("Swagger Example")
-                .description("WEB服务调用示例")
+                .description("EXAMPLE-CUSTOMER InferFace Document")
                 .contact(new Contact("liNan", "http:/test-url.com", "linan.groot@outlook.com"))
                 .license("Apache 2.0")
                 .licenseUrl("http://www.apache.org/licenses/LICENSE-2.0.html")

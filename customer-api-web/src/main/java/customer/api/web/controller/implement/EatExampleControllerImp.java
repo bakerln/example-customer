@@ -19,8 +19,8 @@ import java.util.Map;
 public class EatExampleControllerImp implements EatExampleController {
 
     @Override
-    public ResultWrapper createFood(Map foodName) {
-        return ResultWrapperUtil.success(foodName.get("foodName"));
+    public ResultWrapper createFood(Food food) {
+        return ResultWrapperUtil.success(food);
     }
 
     @Override
