@@ -15,10 +15,6 @@
         <!--WEB框架依赖-->
         <dependency>
             <groupId>cn.bread.framework</groupId>
-            <artifactId>common-framework-web</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>cn.bread.framework</groupId>
             <artifactId>common-framework-cloud</artifactId>
         </dependency>
 

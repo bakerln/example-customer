@@ -1,5 +1,6 @@
 package customer.api.web.config;
 
+import com.google.common.base.Predicates;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
@@ -12,6 +13,8 @@ import springfox.documentation.service.Contact;
 import springfox.documentation.spi.DocumentationType;
 import springfox.documentation.spring.web.plugins.Docket;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
+
+import static springfox.documentation.builders.PathSelectors.ant;
 
 /**
  * <p>Description:  Swagger 配置</p>
@@ -40,13 +43,6 @@ public class SwaggerConfig {
 //                        ),
 //                        new ApiKey("api_key", "api_key", "header")
 //                ))
-                //另一种筛选方式
-//                .apis(RequestHandlerSelectors.any())
-                //错误路径不监控
-//                .paths(
-//                        Predicates.and(ant("/**"),
-//                        Predicates.not(ant("/error"))))
-//                        Predicates.not(ant("/actuator/**"))))
                 .build();
     }
 

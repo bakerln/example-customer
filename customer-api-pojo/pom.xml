@@ -21,6 +21,10 @@
             <groupId>cn.bread.framework</groupId>
             <artifactId>common-framework-util</artifactId>
         </dependency>
+        <dependency>
+            <groupId>cn.bread.framework</groupId>
+            <artifactId>common-framework-web</artifactId>
+        </dependency>
     </dependencies>
 
 </project>
