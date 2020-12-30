@@ -59,7 +59,7 @@ management:
     httptrace:
       enabled: true
   server:
-    status : 1
+    status : 500002
 
 #actuator info
 info:
