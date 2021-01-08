@@ -14,7 +14,7 @@
     <dependencies>
         <!--WEB框架依赖-->
         <dependency>
-            <groupId>cn.bread.framework</groupId>
+            <groupId>com.github.bakerln.framework</groupId>
             <artifactId>common-framework-cloud</artifactId>
         </dependency>
 

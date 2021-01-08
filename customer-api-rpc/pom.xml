@@ -14,7 +14,7 @@
     <dependencies>
         <!--RPC框架依赖-->
         <dependency>
-            <groupId>cn.bread.framework</groupId>
+            <groupId>com.github.bakerln.framework</groupId>
             <artifactId>common-framework-rpc</artifactId>
         </dependency>
 

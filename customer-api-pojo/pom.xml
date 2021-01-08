@@ -14,15 +14,15 @@
     <dependencies>
         <!--POJO框架依赖-->
         <dependency>
-            <groupId>cn.bread.framework</groupId>
+            <groupId>com.github.bakerln.framework</groupId>
             <artifactId>common-framework-pojo</artifactId>
         </dependency>
         <dependency>
-            <groupId>cn.bread.framework</groupId>
+            <groupId>com.github.bakerln.framework</groupId>
             <artifactId>common-framework-util</artifactId>
         </dependency>
         <dependency>
-            <groupId>cn.bread.framework</groupId>
+            <groupId>com.github.bakerln.framework</groupId>
             <artifactId>common-framework-web</artifactId>
         </dependency>
     </dependencies>
