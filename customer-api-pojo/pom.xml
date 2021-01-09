@@ -21,10 +21,5 @@
             <groupId>com.github.bakerln.framework</groupId>
             <artifactId>common-framework-util</artifactId>
         </dependency>
-        <dependency>
-            <groupId>com.github.bakerln.framework</groupId>
-            <artifactId>common-framework-web</artifactId>
-        </dependency>
     </dependencies>
-
 </project>

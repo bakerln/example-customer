@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.*;
 
 
 /**
- * <p>Description:  食物操作业务</p>
+ * <p>Description:  食物操作业务 HTTP接口</p>
  *
  * @author linan
  * @date 2020-11-03

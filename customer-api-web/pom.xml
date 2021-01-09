@@ -17,6 +17,10 @@
             <groupId>com.github.bakerln.framework</groupId>
             <artifactId>common-framework-cloud</artifactId>
         </dependency>
+        <dependency>
+            <groupId>com.github.bakerln.framework</groupId>
+            <artifactId>common-framework-web</artifactId>
+        </dependency>
 
         <!--本域依赖-->
         <dependency>

@@ -4,13 +4,15 @@ import common.framework.util.jsonutil.JsonUtil;
 import common.framework.util.voutil.ResultWrapper;
 import common.framework.util.voutil.ResultWrapperUtil;
 import customer.api.pojo.vo.Food;
+import customer.api.service.EatExampleService;
 import customer.api.web.controller.EatExampleController;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Map;
 
 /**
- * <p>Description: </p>
+ * <p>Description: 食物操作业务 HTTP接口实现</p>
  *
  * @author linan
  * @date 2020-11-03
@@ -18,9 +20,12 @@ import java.util.Map;
 @RestController
 public class EatExampleControllerImp implements EatExampleController {
 
+    @Autowired
+    private EatExampleService eatExampleService;
+
     @Override
     public ResultWrapper createFood(Food food) {
-        return ResultWrapperUtil.success(food);
+        return eatExampleService.createFood(food);
     }
 
     @Override
