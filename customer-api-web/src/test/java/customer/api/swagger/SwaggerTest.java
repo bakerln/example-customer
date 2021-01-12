@@ -1,4 +1,4 @@
-package customer.api.web;
+package customer.api.swagger;
 
 import io.github.swagger2markup.GroupBy;
 import io.github.swagger2markup.Language;

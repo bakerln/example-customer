@@ -1,7 +1,7 @@
 package customer.api.service.implement;
 
-import common.framework.util.voutil.ResultWrapper;
-import common.framework.util.voutil.ResultWrapperUtil;
+import common.framework.wrapper.ResultWrapper;
+import common.framework.wrapper.ResultWrapperUtil;
 import customer.api.pojo.vo.Food;
 import customer.api.rpc.EatExampleRPC;
 import customer.api.service.EatExampleService;

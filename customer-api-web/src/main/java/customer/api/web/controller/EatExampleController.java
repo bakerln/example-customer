@@ -1,6 +1,6 @@
 package customer.api.web.controller;
 
-import common.framework.util.voutil.ResultWrapper;
+import common.framework.wrapper.ResultWrapper;
 import customer.api.pojo.vo.Food;
 import io.swagger.annotations.*;
 import org.springframework.web.bind.annotation.*;

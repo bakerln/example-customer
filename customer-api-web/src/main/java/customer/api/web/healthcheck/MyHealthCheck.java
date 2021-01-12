@@ -1,7 +1,7 @@
 package customer.api.web.healthcheck;
 
-import common.framework.util.voutil.ResultWrapper;
-import common.framework.util.voutil.ResultWrapperUtil;
+import common.framework.wrapper.ResultWrapper;
+import common.framework.wrapper.ResultWrapperUtil;
 import customer.api.web.config.ServiceStatusConfig;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;

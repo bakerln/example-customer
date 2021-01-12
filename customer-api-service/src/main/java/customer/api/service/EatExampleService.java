@@ -1,6 +1,6 @@
 package customer.api.service;
 
-import common.framework.util.voutil.ResultWrapper;
+import common.framework.wrapper.ResultWrapper;
 import customer.api.pojo.vo.Food;
 
 /**

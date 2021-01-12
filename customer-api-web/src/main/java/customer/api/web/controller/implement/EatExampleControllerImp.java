@@ -1,8 +1,8 @@
 package customer.api.web.controller.implement;
 
-import common.framework.util.jsonutil.JsonUtil;
-import common.framework.util.voutil.ResultWrapper;
-import common.framework.util.voutil.ResultWrapperUtil;
+import common.framework.util.JsonUtil;
+import common.framework.wrapper.ResultWrapper;
+import common.framework.wrapper.ResultWrapperUtil;
 import customer.api.pojo.vo.Food;
 import customer.api.service.EatExampleService;
 import customer.api.web.controller.EatExampleController;

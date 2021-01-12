@@ -1,6 +1,6 @@
 package customer.api.rpc;
 
-import common.framework.util.voutil.ResultWrapper;
+import common.framework.wrapper.ResultWrapper;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.PostMapping;
 
