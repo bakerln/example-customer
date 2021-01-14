@@ -1,10 +1,12 @@
 package customer.api.service.implement;
 
+import common.framework.cache.TimeCache;
 import common.framework.wrapper.ResultWrapper;
 import common.framework.wrapper.ResultWrapperUtil;
 import customer.api.pojo.vo.Food;
 import customer.api.rpc.EatExampleRPC;
 import customer.api.service.EatExampleService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 /**
@@ -16,8 +18,14 @@ import org.springframework.stereotype.Service;
 @Service
 public class EatExampleServiceImp implements EatExampleService,EatExampleRPC {
 
+    @Autowired
+    private TimeCache timeCache;
+
     @Override
     public ResultWrapper createFood(Food food) {
+        //可加时间
+        timeCache.put("timeCache1","this is a time Cache without Time");
+        timeCache.get("timeCache1");
         return ResultWrapperUtil.success("EatImp save success from example-customer!",null);
     }
 

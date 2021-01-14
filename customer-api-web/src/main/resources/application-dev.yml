@@ -18,11 +18,15 @@ spring:
       driver-class-name: com.mysql.cj.jdbc.Driver
       initial-size: 2
       max-active: 10
-#  redis:
-#    host: 127.0.0.1
-#    port: 6379
-#    database: 0
-#    timeout: 0
+  redis:
+    databases: 0
+    ports: 6379
+    hosturl: localhost
+    expire: 60
+  cache:
+    timeout: 2000
+    capacity: 2
+
 
 eureka:
    instance:
@@ -42,7 +46,7 @@ eureka:
      register-with-eureka: true
      fetch-registry: true
      # 是否启用Eureka
-     enabled: true
+     enabled: false
      registry-fetch-interval-seconds: 10
 
 #actuator health check

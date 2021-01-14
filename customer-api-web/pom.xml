@@ -27,6 +27,7 @@
             <groupId>cn.com.example</groupId>
             <artifactId>customer-api-service</artifactId>
         </dependency>
+
     </dependencies>
 
     <build>

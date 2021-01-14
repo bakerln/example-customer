@@ -1,8 +1,9 @@
 package customer.api.web;
 
+import common.framework.cache.LfuCache;
+import common.framework.cache.LruCache;
+import common.framework.cache.TimeCache;
 import common.framework.util.DateUtil;
-import customer.api.web.cache.Cache;
-import customer.api.web.cache.CacheByTime;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,10 +24,13 @@ import java.util.Date;
 public class CacheManagerTest {
 
     @Autowired
-    private CacheByTime cacheByTime;
+    private TimeCache timeCache;
 
     @Autowired
-    private Cache cache;
+    private LfuCache lfuCache;
+
+    @Autowired
+    private LruCache lruCache;
 
     @Test
     public void toolA(){
@@ -37,18 +41,20 @@ public class CacheManagerTest {
 
     @Test
     public void toolB() throws InterruptedException {
-        cacheByTime.put("timeCache1","this is a time Cache without Time");
-        cacheByTime.put("timeCache2","this is a time Cache with time",20000);
-        cache.put("cache","LFUcache",1000);
-
+        timeCache.put("timeCache1","this is a time Cache without Time");
+        timeCache.put("timeCache2","this is a time Cache with time",10000);
+        lfuCache.put("cache1","LFUcache");
+        lfuCache.put("cache2","LFUcache",100);
         Thread.sleep(100);
-        System.out.println(cacheByTime.get("timeCache1"));
-        System.out.println(cacheByTime.get("timeCache2"));
-        System.out.println(cache.get("cache"));
-        Thread.sleep(10000);
-        System.out.println(cacheByTime.get("timeCache1"));
-        System.out.println(cacheByTime.get("timeCache2"));
-        System.out.println(cache.get("cache"));
+        System.out.println(timeCache.get("timeCache1"));
+        System.out.println(timeCache.get("timeCache2"));
+        System.out.println(lfuCache.get("cache1"));
+        System.out.println(lfuCache.get("cache2"));
+        Thread.sleep(5000);
+        System.out.println(timeCache.get("timeCache1"));
+        System.out.println(timeCache.get("timeCache2"));
+        System.out.println(lfuCache.get("cache1"));
+        System.out.println(lfuCache.get("cache2"));
     }
 
 //

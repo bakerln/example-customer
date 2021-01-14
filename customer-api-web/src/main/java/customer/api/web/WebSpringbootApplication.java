@@ -10,7 +10,7 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
  * @author linan
  * @date 2020-07-27 14:52
  */
-@SpringBootApplication(scanBasePackages = "customer.api")
+@SpringBootApplication(scanBasePackages = {"customer.api","common.framework.cache","common.framework.redis"})
 @EnableEurekaClient
 //@EnableDiscoveryClient
 //@EnableFeignClients(basePackages = "customer.api")
