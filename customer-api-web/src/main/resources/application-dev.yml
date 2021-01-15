@@ -19,7 +19,6 @@ spring:
       initial-size: 2
       max-active: 10
   redis:
-    databases: 0
     ports: 6379
     hosturl: localhost
     expire: 60
