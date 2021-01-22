@@ -17,6 +17,10 @@
             <groupId>com.github.bakerln.framework</groupId>
             <artifactId>common-framework-service</artifactId>
         </dependency>
+        <!--<dependency>-->
+            <!--<groupId>com.github.bakerln.framework</groupId>-->
+            <!--<artifactId>common-framework-dao</artifactId>-->
+        <!--</dependency>-->
 
         <!--本域依赖-->
         <dependency>

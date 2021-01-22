@@ -80,7 +80,7 @@ public class RedisTest {
 
     @Test
     public void TestRedis3(){
-        redisSyncUtil.delete("redisSyncUtil1","redisSyncUtil2");
+        redisSyncUtil.delete("redisSyncUtil1","redisSyncUtil2","name","redisAsyncUtil2");
     }
 
     @Test

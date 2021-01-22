@@ -1,5 +1,5 @@
 server:
-  port: 9081
+  port: 9083
 
 spring:
   application:
@@ -7,17 +7,14 @@ spring:
     description: 微服务消费用例
     version: 1.0.0-SNAPSHOT
 #  primaryDataSource: spring.datasource.main
-  datasource:
-#    url: jdbc:mysql://rm-2zen4fcwysho855vp.mysql.rds.aliyuncs.com:3306/api?characterEncoding=UTF-8&useSSL=false
-#    password: 1q2w3e4R
-#    username: base_user
-    druid:
-      url: jdbc:mysql://rm-2zen4fcwysho855vp.mysql.rds.aliyuncs.com:3306/api?characterEncoding=UTF-8&useSSL=false
-      password: 1q2w3e4R
-      username: base_user
-      driver-class-name: com.mysql.cj.jdbc.Driver
-      initial-size: 2
-      max-active: 10
+#  datasource:
+#    druid:
+#      url: jdbc:mysql://rm-2zen4fcwysho855vp.mysql.rds.aliyuncs.com:3306/api?characterEncoding=UTF-8&useSSL=false
+#      password: 1q2w3e4R
+#      username: base_user
+#      driver-class-name: com.mysql.cj.jdbc.Driver
+#      initial-size: 2
+#      max-active: 10
   redis:
     ports: 6379
     hosturl: localhost
@@ -45,7 +42,7 @@ eureka:
      register-with-eureka: true
      fetch-registry: true
      # 是否启用Eureka
-     enabled: false
+     enabled: true
      registry-fetch-interval-seconds: 10
 
 #actuator health check
