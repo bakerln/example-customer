@@ -18,7 +18,7 @@ import java.util.Map;
  * @date 2020-11-03
  */
 @RestController
-public class EatExampleControllerImp implements EatExampleController {
+public class EatExampleControllerImp implements EatExampleController{
 
     @Autowired
     private EatExampleService eatExampleService;
@@ -47,4 +47,13 @@ public class EatExampleControllerImp implements EatExampleController {
     public ResultWrapper getFoodList() {
         return ResultWrapperUtil.success("foodlist", JsonUtil.toBean("{\"name\":\"hamburger\"}",Map.class));
     }
+
+//    /**
+//     * rpc 方法
+//     * @return
+//     */
+//    @Override
+//    public ResultWrapper createFood(){
+//        return eatExampleService.createFood();
+//    }
 }

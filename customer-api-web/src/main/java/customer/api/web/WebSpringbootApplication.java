@@ -14,6 +14,7 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 
 @SpringBootApplication(scanBasePackages = {"customer.api","common.framework.cache"})
 @EnableEurekaClient
+@EnableDiscoveryClient
 @EnableFeignClients(basePackages = "customer.api")
 public class WebSpringbootApplication {
 

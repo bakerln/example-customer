@@ -67,3 +67,4 @@ info:
     name:  ${spring.application.name}
     description: ${spring.application.description}
     version: ${spring.application.version}
+

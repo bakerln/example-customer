@@ -44,17 +44,6 @@ public interface EatExampleController {
             notes = "请求参数为食物对象",
             response = Food.class
     )
-    @ApiResponses(value ={
-            @ApiResponse(
-                    code = 200,
-                    message = "请求成功！"),
-            @ApiResponse(
-                    code = 900,
-                    message = "009XX 业务相关错误！"),
-            @ApiResponse(
-                    code = 500,
-                    message = "005XX 服务器相关错误！")
-    })
     @PutMapping("/food")
     ResultWrapper updateFood(@RequestBody Food food);
 
@@ -63,17 +52,6 @@ public interface EatExampleController {
             value = "查看食物列表",
             notes = "无请求参数"
     )
-    @ApiResponses(value ={
-            @ApiResponse(
-                    code = 200,
-                    message = "请求成功！"),
-            @ApiResponse(
-                    code = 900,
-                    message = "009XX 业务相关错误！"),
-            @ApiResponse(
-                    code = 500,
-                    message = "005XX 服务器相关错误！")
-    })
     @GetMapping("/getFood")
     ResultWrapper getFoodList();
 
@@ -130,4 +108,5 @@ public interface EatExampleController {
     })
     @DeleteMapping("/food/{id}")
     ResultWrapper throwFood(@PathVariable Integer id);
+
 }
