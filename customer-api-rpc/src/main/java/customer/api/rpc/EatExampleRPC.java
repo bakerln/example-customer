@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 /**
  * <p>Description: RPC 业务服务接口</p>
@@ -19,6 +20,9 @@ public interface EatExampleRPC {
 
     @RequestMapping (value = "/rpc/customer.api.rpc.EatExampleRPC/createFood",method = RequestMethod.GET)
     ResultWrapper createFood();
+
+    @GetMapping (value = "/rpc/customer.api.rpc.EatExampleRPC/createFoodGet")
+    ResultWrapper createFoodGet(@RequestParam("foodName") Food foodName);
 
     @PostMapping(value = "/rpc/customer.api.rpc.EatExampleRPC/createDrink")
     ResultWrapper createDrink(@RequestParam("foodName")  String foodName,@RequestParam("drinkName") String drinkName);
@@ -33,7 +37,7 @@ public interface EatExampleRPC {
     ResultWrapper createDrink11(@RequestBody List<String> foodNameList);
 
     @PostMapping(value = "/rpc/customer.api.rpc.EatExampleRPC/createDrink2")
-    ResultWrapper createDrink2(@RequestBody Map foodNameMap);
+    ResultWrapper createDrink2(@RequestBody Map<String,Food> foodNameMap);
 
     @PostMapping(value = "/rpc/customer.api.rpc.EatExampleRPC/createDrink3")
     ResultWrapper createDrink3(@RequestBody Food food);

@@ -15,13 +15,13 @@ spring:
 #      driver-class-name: com.mysql.cj.jdbc.Driver
 #      initial-size: 2
 #      max-active: 10
-  redis:
-    ports: 6379
-    hosturl: localhost
-    expire: 60
-  cache:
-    timeout: 2000
-    capacity: 2
+#  redis:
+#    ports: 6379
+#    hosturl: localhost
+#    expire: 60
+#  cache:
+#    timeout: 2000
+#    capacity: 2
 
 
 eureka:
@@ -68,3 +68,15 @@ info:
     description: ${spring.application.description}
     version: ${spring.application.version}
 
+service:
+  rpc:
+    filter: true
+  cache:
+    enable: true
+    timeout: 2000
+    capacity: 2
+  redis:
+    enable: false
+    ports: 6379
+    hosturl: localhost
+    expire: 60

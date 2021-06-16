@@ -12,6 +12,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 /**
  * <p>Description: HTTP/RPC 业务接口实现</p>
@@ -37,6 +38,12 @@ public class EatExampleService implements EatExampleRPC {
     public ResultWrapper createFood() {
         logger.info("in createFood");
         return ResultWrapperUtil.success("EatImp save success from example-customer!",null);
+    }
+
+    @Override
+    public ResultWrapper createFoodGet(Food foodName) {
+        logger.info(foodName.toString());
+        return ResultWrapperUtil.success("EatImp save success from example-customer!",foodName);
     }
 
     @Override
